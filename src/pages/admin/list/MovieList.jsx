@@ -3,7 +3,6 @@ import { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { AuthContext } from '../../../contextApi/authContext/AuthContext';
 import './Movielist.scss';
-// import { Publish } from "@material-ui/icons";
 
 export default function List() {
   const id = useParams().id;
@@ -12,12 +11,16 @@ export default function List() {
   useEffect(() => {
     const fetchList = async () => {
       try {
-        const res = await axios.get('/lists/' + id, {
-          headers: {
-            token:
-              'Bearer ' + JSON.parse(localStorage.getItem('user')).accessToken,
-          },
-        });
+        const res = await axios.get(
+          'https://netflix-clone-001.herokuapp.com/api/lists/' + id,
+          {
+            headers: {
+              token:
+                'Bearer ' +
+                JSON.parse(localStorage.getItem('user')).accessToken,
+            },
+          }
+        );
         setList(res.data);
       } catch (e) {
         console.log(e);

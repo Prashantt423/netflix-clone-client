@@ -16,7 +16,9 @@ export default function User() {
   useEffect(() => {
     try {
       const fetchUser = async () => {
-        const res = await axios.get(`/users/find/${id}`);
+        const res = await axios.get(
+          `https://netflix-clone-001.herokuapp.com/api/users/find/${id}`
+        );
         setUser(res.data);
       };
       fetchUser();

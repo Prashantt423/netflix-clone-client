@@ -11,11 +11,14 @@ export default function Featured(props) {
   const { user } = useContext(AuthContext);
   useEffect(() => {
     const fetchFeaturedMovie = async () => {
-      const res = await axios.get('/movies/random', {
-        headers: {
-          token: 'Bearer ' + user?.accessToken,
-        },
-      });
+      const res = await axios.get(
+        'https://netflix-clone-001.herokuapp.com/api/movies/random',
+        {
+          headers: {
+            token: 'Bearer ' + user?.accessToken,
+          },
+        }
+      );
       setFeaturedMovie(res.data);
     };
     fetchFeaturedMovie();

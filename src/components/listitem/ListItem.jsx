@@ -15,11 +15,14 @@ export default function ListItem({ item }) {
   useEffect(() => {
     const getMovie = async () => {
       try {
-        const res = await axios.get('/movies/find/' + item, {
-          headers: {
-            token: 'Token ' + user?.accessToken,
-          },
-        });
+        const res = await axios.get(
+          'https://netflix-clone-001.herokuapp.com/api/movies/find/' + item,
+          {
+            headers: {
+              token: 'Token ' + user?.accessToken,
+            },
+          }
+        );
         setMovie(res.data);
       } catch (err) {
         console.log(err);

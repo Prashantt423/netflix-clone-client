@@ -8,12 +8,16 @@ export default function WidgetSm() {
   useEffect(() => {
     const getNewUsers = async () => {
       try {
-        const res = await axios.get('/users', {
-          headers: {
-            token:
-              'Bearer ' + JSON.parse(localStorage.getItem('user'))?.accessToken,
-          },
-        });
+        const res = await axios.get(
+          'https://netflix-clone-001.herokuapp.com/api/users',
+          {
+            headers: {
+              token:
+                'Bearer ' +
+                JSON.parse(localStorage.getItem('user'))?.accessToken,
+            },
+          }
+        );
         setNewUsers(res.data);
       } catch (err) {
         console.log(err);

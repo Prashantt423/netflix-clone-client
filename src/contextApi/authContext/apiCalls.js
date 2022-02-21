@@ -12,7 +12,10 @@ import {
 export const login = async (user, dispatch) => {
   dispatch(loginStart());
   try {
-    const res = await axios.post('auth/login', user);
+    const res = await axios.post(
+      'https://netflix-clone-001.herokuapp.com/api/auth/login',
+      user
+    );
     dispatch(loginSuccess(res.data));
   } catch (err) {
     dispatch(loginFailure());
@@ -28,7 +31,9 @@ export const Logout = async (dispatch) => {
 export const getAllUsers = async (dispatch) => {
   dispatch(getUsersStart());
   try {
-    const res = await axios.get('/users');
+    const res = await axios.get(
+      'https://netflix-clone-001.herokuapp.com/api/users'
+    );
     dispatch(getUsersSuccess(res.data));
   } catch (e) {
     dispatch(getUsersFailure());

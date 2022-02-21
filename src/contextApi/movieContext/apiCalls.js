@@ -18,11 +18,15 @@ import {
 export const getOneMovie = async (id, dispatch) => {
   dispatch(getOneMovieStart());
   try {
-    const res = await axios.get(`/movies/find/${id}`, {
-      headers: {
-        token: 'Bearer ' + JSON.parse(localStorage.getItem('user')).accessToken,
-      },
-    });
+    const res = await axios.get(
+      `https://netflix-clone-001.herokuapp.com/api/movies/find/${id}`,
+      {
+        headers: {
+          token:
+            'Bearer ' + JSON.parse(localStorage.getItem('user')).accessToken,
+        },
+      }
+    );
     dispatch(getOneMovieSuccess(res.data));
   } catch (err) {
     dispatch(getOneMovieFailure());
@@ -33,11 +37,15 @@ export const getOneMovie = async (id, dispatch) => {
 export const getMovies = async (dispatch) => {
   dispatch(getMoviesStart());
   try {
-    const res = await axios.get('/movies', {
-      headers: {
-        token: 'Bearer ' + JSON.parse(localStorage.getItem('user')).accessToken,
-      },
-    });
+    const res = await axios.get(
+      'https://netflix-clone-001.herokuapp.com/api/movies',
+      {
+        headers: {
+          token:
+            'Bearer ' + JSON.parse(localStorage.getItem('user')).accessToken,
+        },
+      }
+    );
     dispatch(getMoviesSuccess(res.data));
   } catch (err) {
     dispatch(getMoviesFailure());
@@ -48,11 +56,16 @@ export const getMovies = async (dispatch) => {
 export const createMovie = async (movie, dispatch) => {
   dispatch(createMovieStart());
   try {
-    const res = await axios.post('/movies', movie, {
-      headers: {
-        token: 'Bearer ' + JSON.parse(localStorage.getItem('user')).accessToken,
-      },
-    });
+    const res = await axios.post(
+      'https://netflix-clone-001.herokuapp.com/api/movies',
+      movie,
+      {
+        headers: {
+          token:
+            'Bearer ' + JSON.parse(localStorage.getItem('user')).accessToken,
+        },
+      }
+    );
     dispatch(createMovieSuccess(res.data));
   } catch (err) {
     dispatch(createMovieFailure());
@@ -63,11 +76,15 @@ export const createMovie = async (movie, dispatch) => {
 export const deleteMovie = async (id, dispatch) => {
   dispatch(deleteMovieStart());
   try {
-    await axios.delete('/movies/' + id, {
-      headers: {
-        token: 'Bearer ' + JSON.parse(localStorage.getItem('user')).accessToken,
-      },
-    });
+    await axios.delete(
+      'https://netflix-clone-001.herokuapp.com/api/movies/' + id,
+      {
+        headers: {
+          token:
+            'Bearer ' + JSON.parse(localStorage.getItem('user')).accessToken,
+        },
+      }
+    );
     dispatch(deleteMovieSuccess(id));
   } catch (err) {
     dispatch(deleteMovieFailure());

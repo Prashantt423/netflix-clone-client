@@ -14,11 +14,15 @@ import {
 export const getLists = async (dispatch) => {
   dispatch(getListsStart());
   try {
-    const res = await axios.get('/lists', {
-      headers: {
-        token: 'Bearer ' + JSON.parse(localStorage.getItem('user')).accessToken,
-      },
-    });
+    const res = await axios.get(
+      'https://netflix-clone-001.herokuapp.com/api/lists',
+      {
+        headers: {
+          token:
+            'Bearer ' + JSON.parse(localStorage.getItem('user')).accessToken,
+        },
+      }
+    );
     dispatch(getListsSuccess(res.data));
   } catch (err) {
     dispatch(getListsFailure());
@@ -29,11 +33,16 @@ export const getLists = async (dispatch) => {
 export const createList = async (list, dispatch) => {
   dispatch(createListStart());
   try {
-    const res = await axios.post('/lists', list, {
-      headers: {
-        token: 'Bearer ' + JSON.parse(localStorage.getItem('user')).accessToken,
-      },
-    });
+    const res = await axios.post(
+      'https://netflix-clone-001.herokuapp.com/api/lists',
+      list,
+      {
+        headers: {
+          token:
+            'Bearer ' + JSON.parse(localStorage.getItem('user')).accessToken,
+        },
+      }
+    );
     dispatch(createListSuccess(res.data));
   } catch (err) {
     dispatch(createListFailure());
@@ -44,11 +53,15 @@ export const createList = async (list, dispatch) => {
 export const deleteList = async (id, dispatch) => {
   dispatch(deleteListStart());
   try {
-    await axios.delete('/lists/' + id, {
-      headers: {
-        token: 'Bearer ' + JSON.parse(localStorage.getItem('user')).accessToken,
-      },
-    });
+    await axios.delete(
+      'https://netflix-clone-001.herokuapp.com/api/lists/' + id,
+      {
+        headers: {
+          token:
+            'Bearer ' + JSON.parse(localStorage.getItem('user')).accessToken,
+        },
+      }
+    );
     dispatch(deleteListSuccess(id));
   } catch (err) {
     dispatch(deleteListFailure());
