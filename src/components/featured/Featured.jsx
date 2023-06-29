@@ -12,7 +12,7 @@ export default function Featured(props) {
   useEffect(() => {
     const fetchFeaturedMovie = async () => {
       const res = await axios.get(
-        'https://netflix-clone-001.herokuapp.com/api/movies/random',
+        'https://netflix-clone-api-xrxw.onrender.com/api/movies/random',
         {
           headers: {
             token: 'Bearer ' + user?.accessToken,
