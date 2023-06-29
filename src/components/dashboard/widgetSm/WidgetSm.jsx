@@ -9,7 +9,7 @@ export default function WidgetSm() {
     const getNewUsers = async () => {
       try {
         const res = await axios.get(
-          'https://netflix-clone-001.herokuapp.com/api/users',
+          'https://netflix-clone-api-xrxw.onrender.com/api/users',
           {
             headers: {
               token:
