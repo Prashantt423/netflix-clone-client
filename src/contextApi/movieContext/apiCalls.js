@@ -19,7 +19,7 @@ export const getOneMovie = async (id, dispatch) => {
   dispatch(getOneMovieStart());
   try {
     const res = await axios.get(
-      `https://netflix-clone-001.herokuapp.com/api/movies/find/${id}`,
+      `https://netflix-clone-api-xrxw.onrender.com/api/movies/find/${id}`,
       {
         headers: {
           token:
@@ -38,7 +38,7 @@ export const getMovies = async (dispatch) => {
   dispatch(getMoviesStart());
   try {
     const res = await axios.get(
-      'https://netflix-clone-001.herokuapp.com/api/movies',
+      'https://netflix-clone-api-xrxw.onrender.com/api/movies',
       {
         headers: {
           token:
@@ -57,7 +57,7 @@ export const createMovie = async (movie, dispatch) => {
   dispatch(createMovieStart());
   try {
     const res = await axios.post(
-      'https://netflix-clone-001.herokuapp.com/api/movies',
+      'https://netflix-clone-api-xrxw.onrender.com/api/movies',
       movie,
       {
         headers: {
@@ -77,7 +77,7 @@ export const deleteMovie = async (id, dispatch) => {
   dispatch(deleteMovieStart());
   try {
     await axios.delete(
-      'https://netflix-clone-001.herokuapp.com/api/movies/' + id,
+      'https://netflix-clone-api-xrxw.onrender.com/api/movies/' + id,
       {
         headers: {
           token:
