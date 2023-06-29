@@ -12,7 +12,7 @@ export default function UserList() {
     try {
       const fetchAllUsers = async () => {
         const res = await axios.get(
-          'https://netflix-clone-001.herokuapp.com/api/users'
+          'https://netflix-clone-api-xrxw.onrender.com/api/users'
         );
         setData(res.data);
       };
