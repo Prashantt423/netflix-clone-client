@@ -16,7 +16,7 @@ export default function ListItem({ item }) {
     const getMovie = async () => {
       try {
         const res = await axios.get(
-          'https://netflix-clone-001.herokuapp.com/api/movies/find/' + item,
+          'https://netflix-clone-api-xrxw.onrender.com/api/movies/find/' + item,
           {
             headers: {
               token: 'Token ' + user?.accessToken,
