@@ -16,7 +16,7 @@ export const Home = ({ type }) => {
     const getRandomLists = async () => {
       try {
         const res = await axios.get(
-          `https://netflix-clone-001.herokuapp.com/api/lists${
+          `https://netflix-clone-api-xrxw.onrender.com/api/lists${
             type ? '?type=' + type : ''
           }${genre ? '&genre=' + genre : ''}`,
           {
