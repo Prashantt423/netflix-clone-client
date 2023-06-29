@@ -15,7 +15,7 @@ export const getLists = async (dispatch) => {
   dispatch(getListsStart());
   try {
     const res = await axios.get(
-      'https://netflix-clone-001.herokuapp.com/api/lists',
+      'https://netflix-clone-api-xrxw.onrender.com/api/lists',
       {
         headers: {
           token:
@@ -34,7 +34,7 @@ export const createList = async (list, dispatch) => {
   dispatch(createListStart());
   try {
     const res = await axios.post(
-      'https://netflix-clone-001.herokuapp.com/api/lists',
+      'https://netflix-clone-api-xrxw.onrender.com/api/lists',
       list,
       {
         headers: {
@@ -54,7 +54,7 @@ export const deleteList = async (id, dispatch) => {
   dispatch(deleteListStart());
   try {
     await axios.delete(
-      'https://netflix-clone-001.herokuapp.com/api/lists/' + id,
+      'https://netflix-clone-api-xrxw.onrender.com/api/lists/' + id,
       {
         headers: {
           token:
