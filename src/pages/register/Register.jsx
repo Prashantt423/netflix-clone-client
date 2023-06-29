@@ -22,7 +22,7 @@ export default function Register() {
     setPassword(passwordRef.current.value);
     setUsername(usernameRef.current.value);
     try {
-      await axios.post('auth/register', { email, username, password });
+      await axios.post('https://netflix-clone-api-xrxw.onrender.com/auth/register', { email, username, password });
       navigate('/login');
     } catch (err) {}
   };
