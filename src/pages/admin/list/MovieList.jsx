@@ -12,7 +12,7 @@ export default function List() {
     const fetchList = async () => {
       try {
         const res = await axios.get(
-          'https://netflix-clone-001.herokuapp.com/api/lists/' + id,
+          'https://netflix-clone-api-xrxw.onrender.com/api/lists/' + id,
           {
             headers: {
               token:
