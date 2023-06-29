@@ -17,7 +17,7 @@ export default function User() {
     try {
       const fetchUser = async () => {
         const res = await axios.get(
-          `https://netflix-clone-001.herokuapp.com/api/users/find/${id}`
+          `https://netflix-clone-api-xrxw.onrender.com/api/users/find/${id}`
         );
         setUser(res.data);
       };
