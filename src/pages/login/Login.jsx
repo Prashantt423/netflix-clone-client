@@ -40,7 +40,7 @@ export default function Login() {
           <span>
             New to Netflix?
           </span>
-          <link href="/register>
+          <link href="/register">
             Sign Up
           </link>
           <small>
