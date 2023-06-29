@@ -40,9 +40,9 @@ export default function Login() {
           <span>
             New to Netflix?
           </span>
-          <link href="/register">
+          <a href="/register">
             Sign Up
-          </link>
+          </a>
           <small>
             This page is protected by Google reCAPTCHA to ensure you're not a
             bot. <b>Learn more</b>.
