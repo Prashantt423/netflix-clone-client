@@ -33,7 +33,7 @@ export default function InnerHomePage() {
     const getStats = async () => {
       try {
         const res = await axios.get(
-          'https://netflix-clone-001.herokuapp.com/api/users/stats',
+          'https://netflix-clone-api-xrxw.onrender.com/api/users/stats',
           {
             headers: {
               token: 'Bearer ' + user.accessToken,
